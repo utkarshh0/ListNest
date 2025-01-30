@@ -10,7 +10,7 @@ export default function DashboardContent() {
 
   return (
     <div className="w-11/12 h-full">
-        <header className="px-8 py-4 flex justify-between border-b-3 border-gray-100">
+        <header className="h-1/12 px-8 py-4 flex justify-between border-b-3 border-gray-100">
             <div>
                 <p className="text-xl text-gray-600 font-medium">Dashboard</p>
             </div>
@@ -20,9 +20,9 @@ export default function DashboardContent() {
                 <p className="text-sm text-gray-500">Utkarsh Kataria</p>
             </div>
         </header>
-        <div className="w-full h-full">
-          {activeTab === "explore" && <Explore />}
-          {activeTab === "home" && <Home />}
+        <div className="w-full h-11/12 overflow-y-scroll">
+            {activeTab === "explore" && <Explore />}
+            {activeTab === "home" && <Home />}
       </div>
     </div>
   )
