@@ -1,9 +1,10 @@
+import Dashboard from "./components/Dashboard";
 
 export default function App(){
 
   return(
     <>
-      <p>ListNest</p>
+      <Dashboard />
     </>
   )
 }
