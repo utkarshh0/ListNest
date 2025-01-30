@@ -21,9 +21,14 @@ export default function DashboardContent() {
             </div>
         </header>
         <div className="w-full h-11/12 overflow-y-scroll">
-            {activeTab === "explore" && <Explore />}
-            {activeTab === "home" && <Home />}
-      </div>
+          {activeTab === "explore" && <Explore />}
+          {activeTab === "home" && <Home />}
+          {["stats", "ship", "calendar", "setting"].includes(activeTab) && (
+            <div className="w-full h-full flex justify-center items-center">
+              <p className="text-2xl font-bold">Under Development</p>
+            </div>
+          )}
+        </div>
     </div>
   )
 }

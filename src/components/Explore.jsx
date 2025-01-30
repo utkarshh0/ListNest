@@ -57,7 +57,7 @@ export default function Explore(){
   return (
     <div className="w-full h-full bg-gray-100 p-2 flex space-x-4">      
       {/* Left Section */}
-      <div className="w-9/12 h-full flex flex-col gap-4">
+      <div className="w-full md:w-9/12 h-full flex flex-col gap-4">
         <div className="w-full h-5/12 flex gap-4">
           {/* Nft Marketplace   */}
           <div className="w-2/5 h-full hover:cursor-pointer p-1 flex flex-col space-y-2">
