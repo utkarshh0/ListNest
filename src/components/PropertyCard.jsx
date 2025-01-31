@@ -1,10 +1,13 @@
 import { IoBedSharp } from "react-icons/io5";
 import { LiaBathSolid } from "react-icons/lia";
 import { TbRulerMeasure } from "react-icons/tb";
+import { useSelector } from "react-redux";
 
 export default function PropertyCard({property}){
+
+    const theme = useSelector(state => state.theme)
     return ( 
-        <div className="bg-white rounded-lg cursor-pointer hover:scale-105 transition duration-300 ease-in-out overflow-hidden shadow-sm">
+        <div className={`${theme === `light` ? `bg-white` : `bg-[#1F2937]`} rounded-lg cursor-pointer hover:scale-105 transition duration-300 ease-in-out overflow-hidden shadow-sm`}>
             <div className="relative ">
                 <img  className='w-full h-48 object-cover object-center' src={property.image} alt={property.title}/>
                 {property.featured && (
@@ -16,24 +19,24 @@ export default function PropertyCard({property}){
                     </span>
                 )}
             </div>
-            <div className="p-4">
+            <div className="p-4 flex flex-col space-y-2">
                 <div className=" flex justify-between items-center mb-2">
                     <span className='text-xl font-bold'> ${property.price} / mo</span>
                 </div>
                 <h3 className='text-md font-bold'>{property.title}</h3>
                 <p className='text-sm text-gray-600'>{property.location}</p>
-                <div className="flex justify-between text-gray-600 text-sm">
-                    <div className="flex gap-2">
-                        <IoBedSharp className="text-xl"/>
-                        {property.beds} Beds
+                <div className="flex justify-between gap-2 text-gray-600 text-sm">
+                    <div className="flex gap-1">
+                        <IoBedSharp className="text-md"/>
+                         <span className="text-xs">{property.beds} Beds</span>
                     </div>
-                    <div className="flex gap-2">
-                        <LiaBathSolid className="text-xl"/>
-                        {property.baths} Baths
+                    <div className="flex gap-1">
+                        <LiaBathSolid className="text-md"/>
+                         <span className="text-xs">{property.baths} Baths</span>
                     </div>
-                    <div className="flex gap-2">
-                        <TbRulerMeasure className="text-xl"/>
-                        {property.sqft} sqft
+                    <div className="flex gap-1">
+                        <TbRulerMeasure className="text-md"/>
+                        <span className="text-xs">{property.sqft} Sqft</span>
                     </div>
                 </div>
             </div>
